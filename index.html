@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cats</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Шапка сайта  -->
+<header>
+    <div> 
+        <h1 class="name">SWEET CATS</h1>
+    </div>
+</header>
+<!-- Основная часть -->
+<div class="gradient"> 
+    <button class="add btn">
+        <i class="fa-solid fa-plus"></i>
+    </button>
+
+    <div class="wrapper">
+        <!-- <div class="info">
+            <button class="button-text">Посмотреть</button>
+            <button class="button">
+                <i class="fa-sharp fa-solid fa-pen-circle"></i>
+            </button>
+        </div> -->
+    </div>
+
+    <div class="modal-block">
+        <div class="modal">
+            <button class="modal-close btn">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h2>Добавить котика</h2>
+            <form id="add">
+                <input type="text" name="name" placeholder="Имя котика">
+                <input type="text" name="image" placeholder="Фото котика">
+                <input type="number" name="age" placeholder="Возраст котика">
+           <div>
+                <label> 
+                    <input type="checkbox" name="favorite">
+                    Любимчик
+                </label>
+            </div>
+            <div class="preview"></div>
+             <button type="submit">Добавить</button>
+             </form>
+            </div>
+        </div>
+    
+</div>
+<div>
+    <!-- конец сайта -->
+    <div class="footer">
+        SUPER Lekso4ka @ 2023
+    </div>
+</div>
+   <script src="js/functions.js"></script>
+   <script src="js/global.js"></script>
+   <script src="script.js"> </script> 
+
+</body>
+
+</html>

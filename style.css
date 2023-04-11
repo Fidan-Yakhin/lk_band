@@ -1,0 +1,185 @@
+header {
+       pointer-events: none;
+       position:fixed;
+       background:none;
+       left: 0;
+       right: 0;
+       transition: box-shadow, background-color 0,25 ease;    
+   }
+   header {
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       padding: 20px;
+       top: 0;
+       z-index: 1;
+   }
+
+.name{
+    padding-bottom: 100%;
+    background-size: 500% 500%;
+    background-image: linear-gradient(-15deg,
+      #12dbcb,
+      #617202,
+      #0f3d04,
+      #690101fd
+    );
+    animation: move-background 30s linear infinite;
+    color: transparent;
+    -webkit-background-clip: text;
+  }
+  /* Основная часть */
+body{
+     margin: 0;
+     font-family: sans-serif;  
+}
+.gradient{
+    padding-bottom: 10%;
+    background-size: 500% 500%;
+    background-image: linear-gradient(-65deg,
+      #f9fd20,
+      #ff26db,
+      #b12c22,
+      #2f4ae2fd
+    );
+    animation: move-background 30s linear infinite;
+  }
+  
+  @keyframes move-background {
+     0% { background-position: 0% 0% }
+     50% { background-position: 100% 0% }
+     100% { background-position: 0% 0% }
+}
+h2{
+     margin: auto;
+}
+.wrapper {
+    min-height: 10vh;
+     /* background-color: beige; */
+     padding: 100px 50px 0 50px;
+     margin: auto;
+     max-width: 1020px;
+     box-sizing: border-box;
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     gap: 30px;
+     align-content: flex-start;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-bottom: 12px;
+    align-items: center;
+    border-radius: 0 20% 0 20%;
+    overflow: hidden;
+    box-shadow: 0 0 5px rgb(89, 0, 255), 0 0 5px #0008;
+    position: relative;
+}
+.card .like{
+    position: absolute;
+    right: 8px;
+    bottom: 6px;
+    color: rgb(82, 17, 17);
+    cursor: pointer;
+}
+.card .pic{
+    height: 250px;
+    width: 100%;
+    background-color: rgb(214, 189, 216);
+    background-image: url(https://cdn.fishki.net/upload/post/2016/07/30/2027975/artleo.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+.pic.tmp{
+    background-image: url(image/кот\ катинка.png);
+    background-size: auto 80%;
+}
+.card.button-text{
+    outline: none;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border-color: rgb(64, 151, 101);
+    color: #37be2b;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+.btn{
+    outline: none;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border-color: blueviolet;
+    color: #3973a3;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+.btn:hover{
+    color: rgb(36, 223, 120);
+    transform: scale(1.1, 1.1);
+ }
+.add {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 10;
+}
+.modal-close{
+    position: absolute;
+    top: 8px;
+    right: 8px;
+ }
+.modal-block{
+    background-color:rgba(143, 139, 139, 0.822);
+    backdrop-filter: blur(2px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.modal-block.active {
+    display:flex;
+}
+.modal{
+    background-color:#fff;
+    padding: 16px;
+    border-radius: 30px;
+    width: calc(100% - 100px);
+    max-width: 300px;
+    max-height: calc(100% - 100px);
+    overflow: auto;
+    position: relative;
+}
+form{
+    display: grid;
+    margin-top: 16px;
+    gap: 8px;
+}
+input:note([type="checkbox"]){
+    width: 100%;
+    box-sizing: border-box;
+    height: 30px;
+}
+
+.preview {
+    height: 200px;
+    background-color: cadetblue;
+    border-radius: 8px;
+    background-image: url("image/кот\ добавления.png");
+    background-position: center;
+    background-size: cover;
+}
+/* конец сайта */
+.footer {
+    margin-top: 20px;
+    text-align: center;
+    opacity: 0.7;
+}
