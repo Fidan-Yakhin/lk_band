@@ -8,12 +8,12 @@ const prevTag = addForm.querySelector(".preview");
 
 
 
-const modalCat = document.querySelector('.modal-cat');
-const cat_window = document.querySelector('.about_window')
-const dc_close = document.querySelector('.about_close');
-const removecard = document.querySelector('.remove');
+// const modalCat = document.querySelector('.modal-cat');
+// const cat_window = document.querySelector('.about_window')
+// const dc_close = document.querySelector('.about_close');
+// const removecard = document.querySelector('.remove');
 
-let name = "Fidan-Yakhin";
+let name = "lk-band";
 let path = `https:/cats.petiteweb.dev/api/single/${name}`;
 
 let pets = localStorage.getItem('band-cats');

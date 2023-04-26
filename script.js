@@ -116,9 +116,9 @@ addForm.addEventListener('submit', e => {
 //     }
 // });
 
-dc_close.addEventListener('click', e => {
-    descript.classList.remove('activs');
-});
+// dc_close.addEventListener('click', e => {
+//     descript.classList.remove('activs');
+// });
 
 
 

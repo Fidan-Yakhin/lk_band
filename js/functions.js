@@ -102,17 +102,17 @@ function deleteCard(id, el) {
     }
 }
 
-function loadDataForCard(id, el) {
-    console.log(id);
+// function loadDataForCard(id, el) {
+//     console.log(id);
   
-    fetch(path + `/update/${id}`, {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(el),
-    }).then((res) => {
-      if (res.status == 200) {
-        location.reload();
-      }
-    });
-  }
+//     fetch(path + `/update/${id}`, {
+//       method: "PUT",
+//       headers: { "Content-Type": "application/json" },
+//       body: JSON.stringify(el),
+//     }).then((res) => {
+//       if (res.status == 200) {
+//         location.reload();
+//       }
+//     });
+//   }
 
