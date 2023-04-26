@@ -14,7 +14,7 @@ const prevTag = addForm.querySelector(".preview");
 // const removecard = document.querySelector('.remove');
 
 let name = "lk-band";
-let path = `https:/cats.petiteweb.dev/api/single/${name}`;
+let path = `https:/cats.petiteweb.dev/api/single/Fidan-Yakhin`;
 
 let pets = localStorage.getItem('band-cats');
 if (pets) {
