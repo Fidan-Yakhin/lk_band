@@ -20,9 +20,9 @@ header {
     background-size: 500% 500%;
     background-image: linear-gradient(-15deg,
       #12dbcb,
-      #617202,
-      #0f3d04,
-      #690101fd
+      #d8f820,
+      #4edf29,
+      #f81d1dfd
     );
     animation: move-background 30s linear infinite;
     color: transparent;
@@ -37,10 +37,10 @@ body{
     padding-bottom: 10%;
     background-size: 500% 500%;
     background-image: linear-gradient(-65deg,
-      #f9fd20,
-      #ff26db,
-      #b12c22,
-      #2f4ae2fd
+      #20fd45,
+      #3713bb,
+      #2e1210,
+      #e22f47fd
     );
     animation: move-background 30s linear infinite;
   }
@@ -76,15 +76,36 @@ h2{
     box-shadow: 0 0 5px rgb(89, 0, 255), 0 0 5px #0008;
     position: relative;
 }
+.card .file{
+    position: absolute;
+    bottom: 5px;
+    right: 40px;
+    color: rgb(223, 48, 4);
+    cursor: pointer;
+}
+.card .pen{
+    position: absolute;
+    bottom: 5px;
+    right: 70px;
+    color: rgb(62, 185, 37);
+    cursor: pointer;
+}
+.card .del{
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    color: rgb(8, 8, 8);
+    cursor: pointer;
+}
 .card .like{
     position: absolute;
-    right: 8px;
-    bottom: 6px;
-    color: rgb(82, 17, 17);
+    top: 10px;
+    left: 10px;
+    color: rgb(255, 6, 47);
     cursor: pointer;
 }
 .card .pic{
-    height: 250px;
+    height: 200px;
     width: 100%;
     background-color: rgb(214, 189, 216);
     background-image: url(https://cdn.fishki.net/upload/post/2016/07/30/2027975/artleo.jpg);
@@ -107,6 +128,7 @@ h2{
     font-size: 1.2rem;
     cursor: pointer;
 }
+
 .btn{
     outline: none;
     border: none;
@@ -176,6 +198,17 @@ input:note([type="checkbox"]){
     background-image: url("image/кот\ добавления.png");
     background-position: center;
     background-size: cover;
+}
+
+.btn-text {
+    border: none;
+    outline: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font: inherit;
+    color: #fff;
+    background-color: rgba(30, 144, 255, 0.70);
 }
 /* конец сайта */
 .footer {

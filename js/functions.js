@@ -1,15 +1,15 @@
 // полиморфный код- переиспользование кода (функция, классы)
 // инкапсуляция - код не должен выполнять то, что от него не требуется
 // sum (a,b){
-    // console.log(a+b) -плохо
+// console.log(a+b) -плохо
 // return a+b;
 // }
-function createCard(pet, tag) {
+function createCard(pet, tag = box) {
     const card = document.createElement("div");
     card.className = "card";
     const cardImg = document.createElement("div");
     cardImg.className = "pic";
-   
+
 
     if (pet.image) {
         cardImg.style.backgroundImage = `url(${pet.image})`;
@@ -26,12 +26,41 @@ function createCard(pet, tag) {
         // поставить лайк (является любимчик или нет)
         setLike(cardLike, pet.id, !pet.favorite);
     })
-    card.append(cardImg, cardTitle, cardLike);
+    const cardInfo = document.createElement('div');
+
+
+    const cardDel = document.createElement('i');
+    cardDel.className = "del fa-solid fa-trash trash";
+    cardDel.addEventListener('click', e => {
+        e.stopPropagation();
+        deleteCard(pet.id, card);
+    })
+
+    const cardFile = document.createElement("i");
+    cardFile.className = "file fa-solid fa-file ";
+    cardFile.dataset.id = pet.id;
+    cardFile.addEventListener("click", e => {
+        if (e.target.classList.contains('file')) {
+            modalCat.classList.toggle('activs');
+            const petId = e.target.dataset.id;
+            loadDataForCard(petId, path + '/show/' + petId);
+        }
+    })
+
+    const cardPen = document.createElement("i");
+    cardPen.className = "pen fa-solid fa-pen";
+    cardPen.addEventListener("click", e => {
+
+        cardPen.dataset.id = pet.id;
+    })
+
+    card.append(cardImg, cardTitle, cardLike, cardInfo, cardDel, cardFile, cardPen);
+
     tag.append(card);
-    // carding.style.height = cardImg.offsetWindth + 'px';
 }
 
-function setLike (el, id, like) {
+
+function setLike(el, id, like) {
     el.classList.toggle('fa-solid');
     el.classList.toggle('fa-regular');
 
@@ -41,17 +70,49 @@ function setLike (el, id, like) {
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify({favorite: like})
+        body: JSON.stringify({ favorite: like })
     })
-    .then(res => res.json())
-    .then(data => {
-        console.log(data);
-        pets = pets.map(p => {
-            if (p.id === id) {
-                p.favorite = like;
-            }
-            return p;
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            pets = pets.map(p => {
+                if (p.id === id) {
+                    p.favorite = like;
+                }
+                return p;
+            })
+            localStorage.setItem("band-cats", JSON.stringify(pets));
         })
-        localStorage.setItem("band-cats", JSON.stringify(pets)); 
-    })
 }
+
+function deleteCard(id, el) {
+    if (id) {
+        fetch(`${path}/delete/${id}`, {
+            method: "delete"
+        })
+
+            .then(res => {
+                if (res.status === 200) {
+                    el.remove();
+                    pets = pets.filter(pet => pet.id !== id)
+                    localStorage.setItem('band-cats', JSON.stringify(pets));
+                }
+            })
+            .catch(error => console.log(error));
+    }
+}
+
+function loadDataForCard(id, el) {
+    console.log(id);
+  
+    fetch(path + `/update/${id}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(el),
+    }).then((res) => {
+      if (res.status == 200) {
+        location.reload();
+      }
+    });
+  }
+
